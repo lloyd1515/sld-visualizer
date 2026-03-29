@@ -4,7 +4,7 @@ const JavaScriptObfuscator = require('javascript-obfuscator');
 
 const srcPath = path.join(__dirname, '..', 'src', 'sld_visualizer.html');
 const outPath = path.join(__dirname, '..', 'public', 'index.html');
-const trackingPath = path.join(__dirname, 'tracking.js');
+const pluginsDir = path.join(__dirname, 'plugins');
 
 const html = fs.readFileSync(srcPath, 'utf8');
 
@@ -14,13 +14,16 @@ if (!scriptMatch) { console.error('No <script> found'); process.exit(1); }
 
 let js = scriptMatch[1];
 
-// Optionally inject tracking (tracking.js is gitignored and independent)
-if (fs.existsSync(trackingPath)) {
-  const { injectTracking } = require(trackingPath);
-  js = injectTracking(js);
-  console.log('Tracking injected from scripts/tracking.js');
-} else {
-  console.log('No tracking.js found — building without analytics');
+// Load plugins if available (plugins/ is local-only)
+if (fs.existsSync(pluginsDir)) {
+  const plugins = fs.readdirSync(pluginsDir).filter(f => f.endsWith('.js')).sort();
+  for (const file of plugins) {
+    const plugin = require(path.join(pluginsDir, file));
+    if (typeof plugin.transform === 'function') {
+      js = plugin.transform(js);
+      console.log(`Plugin loaded: ${file}`);
+    }
+  }
 }
 
 // Obfuscate
