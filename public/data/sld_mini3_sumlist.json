@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "clauses": [
+    { "id": 1, "label": "s1", "head": "sum([], 0)", "body": "" },
+    { "id": 2, "label": "s2", "head": "sum([H|T], S)", "body": "sum(T, S1), S is S1+H" }
+  ],
+  "query": "?- sum([3,2], R).",
+  "nodes": [],
+  "resultSteps": []
+}

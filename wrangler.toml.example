@@ -1,0 +1,6 @@
+name = "sld-visualizer"
+pages_build_output_dir = "public"
+
+[[kv_namespaces]]
+binding = "SLD_TRACKING"
+id = "YOUR_KV_NAMESPACE_ID"

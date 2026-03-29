@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "clauses": [
+    { "id": 1, "label": "n1", "head": "len([], 0)", "body": "" },
+    { "id": 2, "label": "n2", "head": "len([_|T], N)", "body": "len(T, N1), N is N1+1" }
+  ],
+  "query": "?- len([x,y], R).",
+  "nodes": [],
+  "resultSteps": []
+}

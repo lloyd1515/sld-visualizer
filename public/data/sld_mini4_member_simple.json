@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "clauses": [
+    { "id": 1, "label": "m1", "head": "member(X, [X|_])", "body": "" },
+    { "id": 2, "label": "m2", "head": "member(X, [_|T])", "body": "member(X, T)" }
+  ],
+  "query": "?- member(b, [a,b]).",
+  "nodes": [],
+  "resultSteps": []
+}

@@ -1,0 +1,8 @@
+node_modules/
+.wrangler/
+wrangler.toml
+public/index.html
+
+# Analytics & tracking (private)
+functions/api/
+scripts/tracking.js

@@ -1,0 +1,16 @@
+{
+  "name": "sld-visualizer",
+  "version": "1.0.0",
+  "description": "Interactive SLD resolution tree visualizer for Prolog",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "deploy": "npm run build && npx wrangler pages deploy public/ --project-name sld-visualizer",
+    "dev": "npx wrangler pages dev public/ --live-reload"
+  },
+  "keywords": ["prolog", "sld", "visualizer", "logic-programming"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "javascript-obfuscator": "^5.4.1"
+  }
+}

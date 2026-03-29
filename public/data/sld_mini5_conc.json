@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "clauses": [
+    { "id": 1, "label": "c1", "head": "conc([], L, L)", "body": "" },
+    { "id": 2, "label": "c2", "head": "conc([H|T], L, [H|R])", "body": "conc(T, L, R)" }
+  ],
+  "query": "?- conc([a], [b], R).",
+  "nodes": [],
+  "resultSteps": []
+}

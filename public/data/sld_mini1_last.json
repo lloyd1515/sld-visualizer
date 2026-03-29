@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "clauses": [
+    { "id": 1, "label": "l1", "head": "last([X], X)", "body": "" },
+    { "id": 2, "label": "l2", "head": "last([_|T], X)", "body": "last(T, X)" }
+  ],
+  "query": "?- last([a,b], R).",
+  "nodes": [],
+  "resultSteps": []
+}

@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/Users/vlads/Desktop/AN3/S2/PL/Seminar/ExSLD -type f -name *.json -o -name *.toml -o -name *.js -o -name *.ts -o -name *.tsx -o -name *.jsx -o -name *.html -o -name *.css)"
+    ]
+  }
+}
