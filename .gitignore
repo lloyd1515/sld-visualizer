@@ -3,7 +3,3 @@ node_modules/
 .claude/
 wrangler.toml
 public/index.html
-
-# Analytics & tracking (private)
-functions/api/
-scripts/tracking.js
