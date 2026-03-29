@@ -12,34 +12,22 @@ Interactive visualizer for SLD (Selective Linear Definite) resolution trees used
 - Export/Import as JSON
 - Export as PNG
 - Multiple preset examples (member, conc, ancestor)
-- Built-in problem reporting
 
 ## Tech Stack
 
 - **Frontend:** Single-file HTML/CSS/JS (no dependencies)
 - **Hosting:** Cloudflare Pages
-- **Backend:** Cloudflare Pages Functions (Workers)
-- **Storage:** Cloudflare KV
 
 ## Setup
 
 1. Clone the repo
-2. Copy `wrangler.toml.example` to `wrangler.toml` and fill in your KV namespace ID
-3. Install dependencies:
+2. Install dependencies:
    ```bash
    npm install
    ```
-4. Create a KV namespace:
+3. Build:
    ```bash
-   npx wrangler kv namespace create SLD_TRACKING
-   ```
-5. Set dashboard password as a secret:
-   ```bash
-   npx wrangler pages secret put DASHBOARD_PASSWORD --project-name sld-visualizer
-   ```
-6. Build and deploy:
-   ```bash
-   npm run deploy
+   npm run build
    ```
 
 ## Project Structure
@@ -51,10 +39,6 @@ Interactive visualizer for SLD (Selective Linear Definite) resolution trees used
 │   ├── index.html               # Built (obfuscated) — gitignored
 │   └── data/
 │       └── *.json               # Preset example trees
-├── functions/api/
-│   ├── track.js                 # POST /api/track — logs visits & imports
-│   ├── report.js                # POST /api/report — user problem reports
-│   └── dashboard.js             # GET /api/dashboard — protected analytics
 ├── scripts/
 │   └── build.js                 # Obfuscation build script
 ├── wrangler.toml.example        # Cloudflare config template
